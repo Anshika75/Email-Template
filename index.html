@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Eczar:wght@400;500;600;700;800&family=Fruktur&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main{
+    height: 100%;
+    width: 100%;
+    background-size: cover !important;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%), url(https://www.dropbox.com/s/h075dtnhjyoi2u6/5172661-min.jpg?dl=1) no-repeat center center scroll;
+}
+header{
+    padding: 30px 10px;
+    background-color: rgba(237,107,76,0.3);
+    clip-path: polygon(0 0,100% 0,100% 80%,0% 100%);
+    width: 100%;
+    padding-bottom: 50px;
+}
+.head{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.logo{
+    height: 75px;
+    width: 75px;
+    background-image: url("https://www.dropbox.com/s/sshqc39mr1xm8ct/1641479668732-min.png?dl=1");
+    background-size: 100% 100%;
+    filter: drop-shadow(2.5px 2.5px 2px #0007);
+}
+.cu{
+    height: 65px;
+    width: 120px;
+    background-image: url("https://www.dropbox.com/s/y7vir203unn2tlj/1641481501545.png?dl=1");
+    background-size: 100% 100%;
+    filter: drop-shadow(2.5px 2.5px 2px #0007);
+}
+.htext{
+    font-family: 'Fruktur', cursive;
+    font-size: 1.5rem;
+    text-align: center;
+    color: rgba(255,255,255,0.5);
+}
+.htext p{
+    font-size: 0.75rem;
+    margin-top: 5px;
+    color: rgba(255,255,255,0.75);
+    font-weight: 100;
+    text-transform: uppercase;
+    font-family: 'Eczar', cursive;
+}
+section{
+    padding: 30px 10px;
+    display: grid;
+    place-items: center;
+}
+section .line{
+    width: 35%;
+    height: 5px;
+    background-color: rgba(236,108,77,0.85);
+    margin-top: 50px;
+}
+section.essay .txtbox{
+    max-width: 90%;
+    font-family: 'Eczar', cursive;
+    color: rgba(255,255,255,0.95);
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+section.essay .txtbox b{
+    background: linear-gradient(-45deg, rgba(236,108,77,1) 0%, rgba(255,255,255,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+section.essay .txtbox b:nth-child(1){
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+section.who .heading, section.opp .heading, section.dom .heading{
+    background: linear-gradient(45deg, rgba(236,108,77,1) 0%, rgba(255,255,255,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Fruktur', cursive;
+    font-size: 2rem;
+    letter-spacing: 2.5px;
+    text-align: center;
+}
+section.who .fbox{
+    display: flex;
+    flex-direction: column;
+}
+section.opp .fbox, section.dom .fbox{
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    height: 100%;
+}
+section.opp .fbox .ssbox, section.dom .fbox .ssbox{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    margin-top: 7px;
+    /* background-color: slateblue; */
+}
+section.dom .fbox .ssbox{
+    justify-content: space-evenly;
+}
+section.who .fbox .sbox, section.opp .fbox .ssbox .sbox, section.dom .fbox .ssbox .sbox{
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+section.opp .fbox .ssbox .sbox, section.dom .fbox .ssbox .sbox{
+    width: 100%;
+}
+section.who .fbox .sbox .icon{
+    border: 3px solid rgba(236,108,77,0.65);
+    padding: 3.5px;
+    border-radius: 50%;
+}
+section.opp .fbox .ssbox .sbox .icon{
+    border: 3px solid rgba(236,108,77,0.65);
+    transform: rotate(45deg);
+    padding: 5px;
+}
+section.who .fbox .sbox .icon i, section.opp .fbox .ssbox .sbox .icon i, section.dom .fbox .ssbox .sbox .icon i{
+    font-size: 0.9rem;
+    color: rgba(236,108,77,0.85);
+}
+section.opp .fbox .ssbox .sbox .icon i{
+    transform: rotate(-45deg);
+}
+section.who .fbox .sbox .txtbox, section.opp .fbox .ssbox .sbox .txtbox, section.dom .fbox .ssbox .sbox .txtbox{
+    font-family: 'Eczar', cursive;
+    color: rgba(255,255,255,0.75);
+    font-size: 1.1rem;
+    margin-left: 20px;
+}
+section.end .txtbox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 90%;
+    font-family: 'Eczar', cursive;
+    color: rgba(255,255,255,0.95);
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+section.end .txtbox i{
+    background: linear-gradient(45deg, rgba(236,108,77,1) 0%, rgba(255,255,255,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+    font-size: 1.2rem;
+    text-align: center;
+}
+section.end .txtbox b{
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    width: 80%;
+    text-align: center;
+    text-align: center;
+}
+section.end .txtbox p b{
+    background: linear-gradient(45deg, rgba(236,108,77,1) 0%, rgba(255,255,255,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: capitalize;
+    font-weight: 800;
+    letter-spacing: normal;
+    font-size: 1rem;
+}
+section.end .txtbox .hambox{
+    margin: 30px;
+    padding: 7px;
+    height: 30px;
+    width: 120px;
+    z-index: 20;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: rgba(237,107,76,0.3);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 1px 1px 0 3px  #1111;
+}
+section.end .txtbox .hambox:hover{
+    box-shadow: 1px 1px 0 3px  #1111;
+}
+section.end .txtbox .hambox a{
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: rgba(255,255,255,0.5);
+    transition: all 0.5s ease-in-out;
+    font-weight: 500;
+    text-decoration: none;
+}
+section.end .txtbox .hambox:hover a{
+    color: rgba(255,255,255,0.95);
+}
+.hambox .over{   
+    background-color: #fc91050c;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    clip-path: circle(0% at 50% 50%);
+    transition: all 0.5s ease-in-out;
+    z-index: 2;
+}
+.hambox:hover .over{
+    clip-path: circle(100% at 50% 50%);
+    background-color: rgba(237,107,76,0.95);
+}
+section.footer{
+    padding: 30px 10px;
+    background-color: rgba(237,107,76,0.3);
+    clip-path: polygon(0 20%,100% 0,100% 100%,0% 100%);
+    width: 100%;
+    padding-top: 50px;
+}
+section.footer .ftext p{
+    font-family: 'Fruktur', cursive;
+    font-size: 1.5rem;
+    text-align: center;
+    color: rgba(255,255,255,0.5);
+    line-height: 2rem;
+    text-align: center;
+}
+section.footer .socialbox{
+    width: 45%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 30px;
+}
+section.footer .socialbox .icon{
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: rgba(237,107,76,0.3);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 1px 1px 0 3px  #1111;
+    border: 2.5px solid rgba(236,108,77,0.45);
+    height: 30px;
+    width: 30px;
+}
+section.footer .socialbox .icon:hover{
+    box-shadow: 1px 1px 0 3px  #1111;
+}
+section.footer .socialbox .icon i{
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: rgba(255,255,255,0.5);
+    transition: all 0.5s ease-in-out;
+}
+section.footer .socialbox .icon:hover i{
+    color: rgba(255,255,255,0.95);
+}
+section.footer .socialbox .icon .over{
+    background-color: #fc91050c;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    clip-path: circle(0% at 50% 50%);
+    transition: all 0.5s ease-in-out;
+    z-index: 2;
+}
+section.footer .socialbox .icon:hover .over{
+    clip-path: circle(100% at 50% 50%);
+    background-color: rgba(237,107,76,0.95);
+} 
+
+@media (min-width:1200px){
+    header{
+        padding: 75px 50px;
+        padding-bottom: 150px;
+    }.logo{
+        height: 120px;
+        width: 120px;
+    }
+    .cu{
+        height: 100px;
+        width: 200px;
+    }
+    .htext{
+        font-size: 3rem;
+        letter-spacing: 2.5px;
+    }
+    .htext p{
+        font-size: 1rem;
+        margin-top: 15px;
+    }
+    section{
+        padding: 50px 20px;
+    }
+    section.essay .txtbox, section.end .txtbox{
+        max-width: 85%;
+        font-size: 1.8rem;
+        line-height: 2.5rem;
+    }
+    section.essay .txtbox, section.end .txtbox p{
+        width: 100%;
+    }
+    section.end .txtbox i{
+        background: linear-gradient(-45deg, rgba(236,108,77,1) 0%, rgba(255,255,255,1) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 2rem;
+    }    
+    section.end .txtbox b{
+        font-size: 1rem;
+    }
+    section.end .txtbox p b{
+        font-size: 1.8rem;
+    }
+    section.end .hambox{
+        transform: scale(1.45);
+    }
+    section.essay .txtbox b:nth-child(1){
+        font-size: 2.2rem;
+        letter-spacing: 5px;
+    }
+    section.who .heading, section.opp .heading, section.dom .heading{
+        font-size: 3.5rem;
+        letter-spacing: 3.5px;
+    }
+    section.who .fbox, section.opp .fbox, section.dom .fbox{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+    }
+    section.who .fbox .sbox, section.opp .fbox .ssbox .sbox, section.dom .fbox .ssbox .sbox{
+        margin-top: 75px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    section.who .fbox .sbox .icon, section.opp .fbox .ssbox .sbox .icon, section.dom .fbox .ssbox .sbox .icon{
+        border: 7px solid rgba(236,108,77,0.65);
+        padding: 15px;
+    }
+    section.who .fbox .sbox .icon i, section.opp .fbox .ssbox .sbox .icon i, section.dom .fbox .ssbox .sbox .icon i{
+        font-size: 1.7rem;
+    }
+    section.who .fbox .sbox .txtbox, section.opp .fbox .ssbox .sbox .txtbox, section.dom .fbox .ssbox .sbox .txtbox{
+        font-size: 1.85rem;
+        margin-top: 25px;
+    }
+    section.opp .fbox, section.dom .fbox{
+        flex-direction: column;
+    }
+    section.opp .fbox .ssbox, section.dom .fbox .ssbox{
+        flex-direction: row;
+        width: 100%;
+    }
+    section .line{
+        height: 7px;
+        margin-top: 100px;
+    }
+    section.footer{
+        padding: 75px 20px;
+        padding-top: 150px;
+    }
+    section.footer .ftext p{
+        font-size: 3rem;
+        letter-spacing: 2.5px;
+        line-height: 3.5rem;
+    }
+    section.footer .socialbox{
+        margin-top: 120px;
+        width: 30%;
+    }
+    section.footer .socialbox .icon{
+        transform: scale(1.5);
+    } 
+}
+        </style>
+        <main>
+            <header>
+                <div class="head">
+                    <div class="logo"></div>
+                    <div class="htext">Hackoverflow Society<br> Is Hiring Now<br><p>An opportunity, exclusively for you</p></div>
+                    <div class="cu"></div>
+                </div>
+            </header>
+            <section class="essay">
+                <div class="txtbox">
+                    <b>Hey Folks,</b><br><br>
+                It is finally time to put the pedal to the metal and recieve amazing benefits. Join <b>Hackerflow Society</b> to prove your abilities in the professional world and become the best att what you do.<br><br>
+                <p>Drum Up, and get into the fam.<br>
+                   Give this learning opportunity a start<br>
+                   And we assure you there shall be no halt!<br></p><br>
+                   Here is a small insight about us.
+                </div>
+            </section>
+            <section class="who">
+                <div class="heading">
+                    Who Are We?
+                </div>
+                <div class="fbox">
+                    <div class="sbox">
+                        <div class="icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="txtbox">Chandigarh University Recognized</div>
+                    </div>
+                    <div class="sbox">
+                        <div class="icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="txtbox">Student Driven Society</div>
+                    </div>
+                </div>
+                <div class="line"></div>
+            </section>
+            <section class="opp">
+                <div class="heading">
+                    Door To New Opportunities
+                </div>
+                <div class="fbox">
+                    <div class="ssbox">
+                        <div class="sbox">
+                            <div class="icon">
+                                <i class="fas fa-hands-helping"></i>
+                            </div>
+                            <div class="txtbox">Hands-On Training</div>
+                        </div>
+                        <div class="sbox">
+                            <div class="icon">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                            </div>
+                            <div class="txtbox">Peer Mentoring</div>
+                        </div>
+                        <div class="sbox">
+                            <div class="icon">
+                                <i class="fas fa-code-branch"></i>
+                            </div>
+                            <div class="txtbox">Internship</div>
+                        </div>
+                    </div>
+                    <div class="ssbox">
+                        <div class="sbox">
+                            <div class="icon">
+                                <i class="fas fa-sitemap"></i>
+                            </div>
+                            <div class="txtbox">Organize Events</div>
+                        </div>
+                        <div class="sbox">
+                            <div class="icon">
+                                <i class="fas fa-ribbon"></i>
+                            </div>
+                            <div class="txtbox">Win HTS Badges</div>
+                        </div>
+                        <div class="sbox">
+                            <div class="icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="txtbox">Certification</div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="line"></div>
+            </section>
+            <section class="dom">
+                <div class="heading">
+                    Offered Domains
+                </div>
+                <div class="fbox">
+                    <div class="ssbox">
+                        <div class="sbox">
+                            <div class="icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="txtbox">Technical</div>
+                        </div>
+                        <div class="sbox">
+                            <div class="icon">
+                                    <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="txtbox">Marketing</div>
+                        </div>
+                        <div class="sbox">
+                            <div class="icon">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <div class="txtbox">Event Management</div>
+                        </div>
+                    </div>
+                    <div class="ssbox">
+                        <div class="sbox">
+                            <div class="icon">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <div class="txtbox">Content Writing</div>
+                        </div>
+                        <div class="sbox">
+                            <div class="icon">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <div class="txtbox">Video Editing</div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="line"></div>
+            </section>
+            <section class="end">
+                <div class="txtbox">
+                    <i>Expand your horizons with Hackoverflow Society</i>
+                    <b>~By the students, For the students</b><br>
+                    <p>Join <b>Hackoverflow Society</b> to prove your abilities in the professional world and become the best at what you do. So what are you waiting for? All you got to do is, click the link below and that's how you will be in.</p>
+                    <div class="hambox">
+                        <a href="https://bit.ly/HSishiring" target="blank">Join Now</a>
+                        <div class="over"></div>
+                    </div>
+                    <p>We will be waiting at HS to learn and grow with you together.<br> Thank you for your time</p>
+
+                </div>
+            </section>
+            <section class="footer">
+                <div class="ftext"><p>Welcome To <br> Hackoverflow Society</p></div>
+                <div class="socialbox">
+                    <div class="icon">
+                        <div class="over"></div>
+                        <a href="https://www.facebook.com/" target="blank"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                    <div class="icon">
+                        <div class="over"></div>
+                        <a href="https://twitter.com/" target="blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                    <div class="icon">
+                        <div class="over"></div>
+                        <a href="https://instagram.com/" target="blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="icon">
+                        <div class="over"></div>
+                        <a href="https://www.linkedin.com/" target="blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
